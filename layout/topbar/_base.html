@@ -1,0 +1,58 @@
+<!--begin::Toolbar wrapper-->
+<div class="topbar d-flex align-items-stretch flex-shrink-0">
+    <!--begin::Activities-->
+    <div class="d-flex align-items-center ms-2 ms-lg-3">
+        <!--begin::Drawer toggle-->
+        <div class="btn btn-icon btn-custom btn-active-light w-35px h-35px w-md-40px h-md-40px" id="kt_activities_toggle">
+            <i class="ki-solid ki-notification-on fs-1"></i>        </div>
+        <!--end::Drawer toggle-->
+    </div>
+    <!--end::Activities-->
+    <!--begin::Notifications-->
+    <div class="d-flex align-items-center ms-2 ms-lg-3">
+        <!--begin::Menu- wrapper-->
+        <div class="btn btn-icon btn-custom btn-active-light position-relative w-35px h-35px w-md-40px h-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+            <i class="ki-solid ki-notification-status fs-1"></i>        </div>
+<!--layout-partial:partials/menus/_notifications-menu.html-->
+        <!--end::Menu wrapper-->
+    </div>
+    <!--end::Notifications-->
+    <!--begin::Chat-->
+    <div class="d-flex align-items-center ms-2 ms-lg-3">
+        <!--begin::Menu wrapper-->
+        <div class="btn btn-icon btn-custom btn-active-light position-relative w-35px h-35px w-md-40px h-md-40px"  id="kt_drawer_chat_toggle">
+            <i class="ki-solid ki-message-text-2 fs-1"></i>
+            <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink">
+            </span>
+        </div>
+        <!--end::Menu wrapper-->
+    </div>
+    <!--end::Chat-->
+    <!--begin::Quick links-->
+    <div class="d-flex align-items-center ms-2 ms-lg-3">
+        <!--begin::Menu wrapper-->
+        <div class="btn btn-icon btn-custom btn-active-light w-35px h-35px w-md-40px h-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+            <i class="ki-solid ki-element-11 fs-1"></i>        </div>
+<!--layout-partial:partials/menus/_quick-links-menu.html-->
+        <!--end::Menu wrapper-->
+    </div>
+    <!--end::Quick links-->
+    <!--begin::Theme mode-->
+    <div class="d-flex align-items-center ms-2 ms-lg-3">
+<!--layout-partial:partials/theme-mode/_main.html-->
+    </div>
+    <!--end::Theme mode-->
+    <!--begin::User-->
+    <div class="d-flex align-items-center ms-2 ms-lg-3" id="kt_header_user_menu_toggle">
+        <!--begin::Menu wrapper-->
+        <div class="cursor-pointer symbol symbol-35px symbol-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+            <img alt="Pic" src="assets/media/avatars/300-1.jpg"/>
+        </div>
+<!--layout-partial:partials/menus/_user-account-menu.html-->
+        <!--end::Menu wrapper-->
+    </div>
+    <!--end::User -->
+    <!--begin::Aside mobile toggle-->
+        <!--end::Aside mobile toggle-->
+</div>
+<!--end::Toolbar wrapper-->

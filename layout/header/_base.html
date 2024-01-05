@@ -1,0 +1,39 @@
+<!--begin::Header-->
+<div id="kt_header" class="header  align-items-stretch" 			data-kt-sticky="true"
+		data-kt-sticky-name="header"
+		data-kt-sticky-offset="{default: '200px', lg: '300px'}"
+	>
+	<!--begin::Container-->
+	<div class=" container-xxl  d-flex align-items-center">
+		<!--begin::Heaeder menu toggle-->
+		<div class="d-flex align-items-center d-lg-none ms-n2 me-3" title="Show aside menu">
+			<div class="btn btn-icon btn-custom w-35px h-35px w-md-40px h-md-40px" id="kt_header_menu_mobile_toggle">
+				<i class="ki-solid ki-abstract-14 fs-2"></i>			</div>
+		</div>
+		<!--end::Heaeder menu toggle-->
+		<!--begin::Header Logo-->
+		<div class="header-logo me-5 me-md-10 flex-grow-1 flex-lg-grow-0">
+			<a href="?page=index">
+				<img alt="Logo" src="assets/media/logos/default-dark.svg" class="h-15px h-lg-20px logo-default"/>
+				<img alt="Logo" src="assets/media/logos/default.svg" class="h-15px h-lg-20px logo-sticky"/>
+			</a>
+		</div>
+		<!--end::Header Logo-->
+		<!--begin::Wrapper-->
+		<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+			<!--begin::Navbar-->
+			<div class="d-flex align-items-stretch" id="kt_header_nav">
+<!--layout-partial:layout/header/_menu.html-->
+			</div>
+			<!--end::Navbar-->
+			<!--begin::Topbar-->
+	        <div class="d-flex align-items-stretch flex-shrink-0">
+<!--layout-partial:layout/topbar/_base.html-->
+			</div>
+			<!--end::Topbar-->
+		</div>
+		<!--end::Wrapper-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Header-->
