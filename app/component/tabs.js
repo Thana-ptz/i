@@ -1,8 +1,8 @@
 
 
 
-  const tabs = <input value='test' />;
-  document.getElementById('tabs').innerHTML = tabs;
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = `<input value='test' />`;
   
   const homeNav = document.querySelector('#home-nav');
   const homePage = document.querySelector('#home-page');
