@@ -3,15 +3,16 @@
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #eeeeee;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .button {
     padding: 5px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #000AAC;
+    text-color: #ffffff;
 }
 
 input[type="text"] {
