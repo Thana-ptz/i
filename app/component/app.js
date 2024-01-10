@@ -10,7 +10,7 @@ function addTask() {
         var li = document.createElement("li");
         li.innerHTML = `
             <span>${taskInput.value}</span>
-            <button onclick="removeTask(this)">Remove</button>
+            <button class="button" onclick="removeTask(this)">ลบ</button>
         `;
         taskList.appendChild(li);
 
