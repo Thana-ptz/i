@@ -17,7 +17,8 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
   <style>
-  .example-content {
+  .page-content {
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -27,7 +28,7 @@
 <ion-tabs>
   <ion-tab tab="home">
     <ion-nav id="home-nav"></ion-nav>
-    <div id="home-page">  
+    <div id="home-page" class="page-content">  
       
       {{content}}
       
@@ -36,7 +37,7 @@
   
   <ion-tab tab="radio">
     <ion-nav id="radio-nav"></ion-nav>
-    <div id="radio-page">
+    <div id="radio-page" class="page-content">
       
        {{content}}
       
