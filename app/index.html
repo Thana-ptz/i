@@ -33,7 +33,14 @@
     <ion-nav id="home-nav"></ion-nav>
     <div id="home-page" class="page-content">  
       
-      {{ 1 }}
+      <div class="app-container">
+        <h1>Todo App</h1>
+        <div>
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
       
     </div>
   </ion-tab>
