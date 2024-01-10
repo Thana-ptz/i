@@ -2,7 +2,7 @@
 
 
   const tabs = '<input value='test' />';
-  document.querySelector('#tabs').innerHTML = tabs;
+  document.getElementById('tabs').innerHTML = tabs;
   
   const homeNav = document.querySelector('#home-nav');
   const homePage = document.querySelector('#home-page');
