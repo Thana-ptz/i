@@ -69,45 +69,32 @@
     <ion-nav id="search-nav"></ion-nav>
     <div id="search-page" class="page-content">
       
-   <ion-tabs>
-  <!-- Tab views -->
-  <ion-tab tab="home"></ion-tab>
-  <ion-tab tab="contact"></ion-tab>
-  <ion-tab tab="settings"></ion-tab>
-
-  <!-- Tab bar -->
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="account">
-      <ion-icon name="person"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="contact">
-      <ion-icon name="call"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="settings">
-      <ion-icon name="settings"></ion-icon>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<ion-content>
+  <ion-list></ion-list>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
       
     </div>
   </ion-tab>
   
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
-      <ion-icon name="store"></ion-icon>
-      Listen Now
+      <ion-icon name="home"></ion-icon>
+      
     </ion-tab-button>
     <ion-tab-button tab="radio">
       <ion-icon name="person"></ion-icon>
-      Radio
+      
     </ion-tab-button>
     <ion-tab-button tab="library">
-      <ion-icon name="plus"></ion-icon>
-      Library
+      <ion-icon name="search"></ion-icon>
+      
     </ion-tab-button>
     <ion-tab-button tab="search">
       <ion-icon name="settings"></ion-icon>
-      Search
+      
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
