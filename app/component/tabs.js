@@ -2,7 +2,14 @@
 
 
   const tabs = document.getElementById('tabs');
-  tabs.innerHTML = `<input value='test' />`;
+  tabs.innerHTML = `<div class="app-container">
+        <h1>Todo App</h1>
+        <div>
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>`;
   
   const homeNav = document.querySelector('#home-nav');
   const homePage = document.querySelector('#home-page');
