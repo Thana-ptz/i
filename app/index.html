@@ -58,45 +58,10 @@
   
   <ion-tab tab="library">
     <ion-nav id="library-nav"></ion-nav>
-    <div id="library-page" class="">
+    <div id="library-page" class="page-content">
 
-      <ion-app>
-        <ion-content>
-  <ion-list></ion-list>
-  <ion-infinite-scroll>
-    <ion-infinite-scroll-content loading-text="Please wait..." loading-spinner="bubbles"></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</ion-content>
-</ion-app>
-<script>
-  const list = document.querySelector('ion-list');
+      {{ 3 }}
 
-  function generateItems() {
-    const count = list.childElementCount + 1;
-    const total = count + 50;
-    for (let i = count; i < total; i++) {
-      const el = document.createElement('ion-item');
-
-      const avatar = document.createElement('ion-avatar');
-      avatar.slot = 'start';
-      const img = document.createElement('img');
-      img.src = `https://picsum.photos/80/80?random=${i}`;
-      img.alt = 'Avatar';
-
-      avatar.appendChild(img);
-      el.appendChild(avatar);
-
-      const text = document.createElement('ion-label');
-      text.textContent = `Item ${i}`;
-
-      el.appendChild(text);
-
-      list.appendChild(el);
-    }
-  }
-
-  generateItems();
-</script>
       
     </div>
   </ion-tab>
@@ -105,12 +70,7 @@
     <ion-nav id="search-nav"></ion-nav>
     <div id="search-page">
       
-<ion-app>
-  <ion-list></ion-list>
-  <ion-infinite-scroll>
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</ion-app>
+     {{ 4 }}
       
     </div>
   </ion-tab>
