@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const content = document.querySelector('ion-content');
+  const content = document.querySelector('#ion-content');
   content.innerHTML += '<!DOCTYPE html>
 <!--
 Author: Keenthemes
