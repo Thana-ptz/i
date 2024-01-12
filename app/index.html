@@ -48,10 +48,21 @@
   <ion-tab tab="radio">
     <ion-nav id="radio-nav"></ion-nav>
     <div id="radio-page" class="page-content">
-      
-     <ion-app>
-  <ion-nav root="page-one"></ion-nav>
-</ion-app>
+
+      <ion-app>
+    <ion-content>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            Ionic JavaScript App
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <h1>Welcome to Ionic JavaScript App!</h1>
+      </ion-content>
+    </ion-content>
+  </ion-app>
 
     </div>
   </ion-tab>
@@ -121,5 +132,8 @@
   const searchPage = document.querySelector('#search-page');
   searchNav.root = searchPage;
 </script>
+    
+    <script src="./app/src/app.js"></script>
+      
   </body>
 </html>
