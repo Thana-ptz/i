@@ -1,9 +1,17 @@
+section {
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
 form {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 100%;
         }
 
         label {
@@ -28,7 +36,7 @@ form {
             font-size: 16px;
         }
 .app-container {
-    max-width: 600px;
+    max-width: 100%;
     margin: 50px auto;
     padding: 20px;
     background-color: #eeeeee;
