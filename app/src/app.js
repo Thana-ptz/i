@@ -1,34 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
   const content = document.querySelector('ion-content');
-
-  // Create Infinite Scroll Container
   const infiniteScrollContainer = document.createElement('ion-infinite-scroll');
-  infiniteScrollContainer.setAttribute('id', 'infinite-scroll-id');
-
-  // Create Infinite Scroll Content
   const infiniteScrollContent = document.createElement('ion-infinite-scroll-content');
-  infiniteScrollContent.setAttribute('loading-text', 'Loading...');
 
-  // Append Infinite Scroll Content to Infinite Scroll Container
+  const itemsContainer = document.createElement('div');
+  itemsContainer.setAttribute('id', 'infinite-scroll-container');
+
   infiniteScrollContainer.appendChild(infiniteScrollContent);
-
-  // Append Infinite Scroll Container to ion-content
+  content.appendChild(itemsContainer);
   content.appendChild(infiniteScrollContainer);
 
-  // Add Event Listener for Infinite Scroll
-  infiniteScrollContainer.addEventListener('ionInfinite', async function () {
-    // Simulate asynchronous data loading
-    setTimeout(() => {
-      // Add more items to the content
-      const itemsContainer = document.getElementById('infinite-scroll-container');
-      for (let i = 0; i < 10; i++) {
-        const newItem = document.createElement('ion-item');
-        newItem.innerText = `Item ${i + 1}`;
-        itemsContainer.appendChild(newItem);
-      }
+  let page = 1; // ตัวแปรเก็บหน้าปัจจุบัน
 
-      // Complete the infinite scroll event
-      infiniteScrollContainer.complete();
-    }, 1000);
+  infiniteScrollContainer.addEventListener('ionInfinite', async function () {
+    try {
+      const response = await fetch(`https://65a1a56642ecd7d7f0a6dbfb.mockapi.io/api/demo/user?page=${page}`);
+      const data = await response.json();
+
+      if (data.length > 0) {
+        data.forEach((item) => {
+          const newItem = document.createElement('ion-item');
+          newItem.innerText = `User ID: ${item.id}, Name: ${item.name}, Email: ${item.email}`;
+          itemsContainer.appendChild(newItem);
+        });
+
+        page++; // เพิ่มหน้าเมื่อโหลดข้อมูลเสร็จ
+        infiniteScrollContainer.complete(); // จบกิจกรรม infinite scroll
+      } else {
+        infiniteScrollContainer.disabled = true; // ปิด infinite scroll เมื่อไม่มีข้อมูล
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      infiniteScrollContainer.complete(); // จบกิจกรรม infinite scroll ในกรณีเกิดข้อผิดพลาด
+    }
   });
 });
