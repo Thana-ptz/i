@@ -2,255 +2,197 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta
-      name="description"
-      content="This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.biz/en/docs/liff/overview/)."
-    />
+    <meta name="description" content="This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.biz/en/docs/liff/overview/)." />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-    
- <link rel="stylesheet" href="./app/styles/app.css" />
- <script src="./app/component/app.js"></script>
-
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="./app/styles/app.css" />
+    <script src="./app/component/app.js"></script>
     <title>THANA Business</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    
-  <style>
-  .page-content {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-</style>
-
-<ion-tabs>
-  <ion-tab tab="home">
-    <ion-nav id="home-nav"></ion-nav>
-    <div id="home-page" class="page-content">  
-      
-      <div class="app-container">
-        <div>
-            <input type="text" id="taskInput" placeholder="เพิ่มข้อมูล">
-            <button class="button" onclick="addTask()">ยืนยัน</button>
+    <style>
+      .page-content {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+    </style>
+    <ion-tabs>
+      <ion-tab tab="home">
+        <ion-nav id="home-nav"></ion-nav>
+        <div id="home-page" class="page-content">
+          <div class="app-container">
+            <div>
+              <input type="text" id="taskInput" placeholder="เพิ่มข้อมูล">
+              <button class="button" onclick="addTask()">ยืนยัน</button>
+            </div>
+            <ul id="taskList"></ul>
+          </div>
         </div>
-        <ul id="taskList"></ul>
-    </div>
-      
-    </div>
-  </ion-tab>
-  
-  <ion-tab tab="radio">
-    <ion-nav id="radio-nav"></ion-nav>
-    <div id="radio-page">
-
-      
-    
-  
-      <ion-content>
-      <ion-content class="ion-padding">
-        <div id="infinite-scroll-container"></div>
-      </ion-content>
-      </ion-content>
-  
-    
-  
-
-    </div>
-  </ion-tab>
-  
-  <ion-tab tab="library">
-    <ion-nav id="library-nav"></ion-nav>
-    <div id="library-page" class="page-content">
-
-     <ion-header>
-  <ion-toolbar>
-    <ion-title>Example</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content color="light">
-  <ion-list inset="true">
-    <ion-item button="true">
-      <ion-icon color="danger" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>General</ion-label>
-      <ion-note slot="end">6</ion-note>
-    </ion-item>
-    <ion-item button="true">
-      <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Shopping</ion-label>
-      <ion-note slot="end">15</ion-note>
-    </ion-item>
-    <ion-item button="true">
-      <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Cleaning</ion-label>
-      <ion-note slot="end">3</ion-note>
-    </ion-item>
-    <ion-item button="true">
-      <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Reminders</ion-label>
-      <ion-note slot="end">8</ion-note>
-    </ion-item>
-  </ion-list>
-
-  <ion-list inset="true">
-    <ion-item button="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <strong>Rick Astley</strong>
-        <ion-text>Never Gonna Give You Up</ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          Never gonna give you up Never gonna let you down Never gonna run...
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-note color="medium">06:11</ion-note>
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-    <ion-item button="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start"></div>
-      <ion-label>
-        <strong>Ionitron</strong>
-        <ion-text>I have become sentient</ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">That is all.</ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-note color="medium">03:44</ion-note>
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-    <ion-item button="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <strong>Steam</strong>
-        <ion-text>Game Store Sale</ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">
-          That game you added to your wish list 2 years ago is now on sale!
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-note color="medium">Yesterday</ion-note>
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-    <ion-item button="true" detail="false">
-      <div class="unread-indicator-wrapper" slot="start"></div>
-      <ion-label>
-        <strong>Ionic</strong>
-        <ion-text>Announcing Ionic 7.0</ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap">This version is one more than Ionic 6!</ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper" slot="end">
-        <ion-note color="medium">Yesterday</ion-note>
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-  </ion-list>
-</ion-content>
-
-      
-    </div>
-  </ion-tab>
-  
-  <ion-tab tab="search">
-    <ion-nav id="search-nav"></ion-nav>
-    <div id="search-page" class="page-content">
-      
-      <ion-content>
-        
-          
-        
-
-    <header>
-        <h1>User Profile & Settings</h1>
-    </header>
-
-    <section id="profile">
-        <h2>User Profile</h2>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <button type="submit">Save Profile</button>
-        </form>
-    </section>
-
-    <section id="settings">
-        <h2>User Settings</h2>
-        <form>
-            <label for="theme">Select Theme:</label>
-            <select id="theme" name="theme">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-            </select>
-
-            <label for="notifications">Receive Notifications:</label>
-            <input type="checkbox" id="notifications" name="notifications" checked>
-
-            <button type="submit">Save Settings</button>
-        </form>
-    </section>
-
-
-      </ion-content>
-     
-      
-    </div>
-  </ion-tab>
-  
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-      
-    </ion-tab-button>
-    <ion-tab-button tab="radio">
-      <ion-icon name="person"></ion-icon>
-      
-    </ion-tab-button>
-    <ion-tab-button tab="library">
-      <ion-icon name="search"></ion-icon>
-      
-    </ion-tab-button>
-    <ion-tab-button tab="search">
-      <ion-icon name="settings"></ion-icon>
-      
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
-
-
-
-<script>
-  const homeNav = document.querySelector('#home-nav');
-  const homePage = document.querySelector('#home-page');
-  homeNav.root = homePage;
-
-  const radioNav = document.querySelector('#radio-nav');
-  const radioPage = document.querySelector('#radio-page');
-  radioNav.root = radioPage;
-
-  const libraryNav = document.querySelector('#library-nav');
-  const libraryPage = document.querySelector('#library-page');
-  libraryNav.root = libraryPage;
-
-  const searchNav = document.querySelector('#search-nav');
-  const searchPage = document.querySelector('#search-page');
-  searchNav.root = searchPage;
-</script>
-    
+      </ion-tab>
+      <ion-tab tab="radio">
+        <ion-nav id="radio-nav"></ion-nav>
+        <div id="radio-page">
+          <ion-content>
+            <ion-content class="ion-padding">
+              <div id="infinite-scroll-container"></div>
+            </ion-content>
+          </ion-content>
+        </div>
+      </ion-tab>
+      <ion-tab tab="library">
+        <ion-nav id="library-nav"></ion-nav>
+        <div id="library-page" class="page-content">
+          <ion-content>
+          <ion-content color="light">
+            <ion-list inset="true">
+              <ion-item button="true">
+                <ion-icon color="danger" slot="start" name="list-circle" size="large"></ion-icon>
+                <ion-label>General</ion-label>
+                <ion-note slot="end">6</ion-note>
+              </ion-item>
+              <ion-item button="true">
+                <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
+                <ion-label>Shopping</ion-label>
+                <ion-note slot="end">15</ion-note>
+              </ion-item>
+              <ion-item button="true">
+                <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
+                <ion-label>Cleaning</ion-label>
+                <ion-note slot="end">3</ion-note>
+              </ion-item>
+              <ion-item button="true">
+                <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
+                <ion-label>Reminders</ion-label>
+                <ion-note slot="end">8</ion-note>
+              </ion-item>
+            </ion-list>
+            <ion-list inset="true">
+              <ion-item button="true" detail="false">
+                <div class="unread-indicator-wrapper" slot="start">
+                  <div class="unread-indicator"></div>
+                </div>
+                <ion-label>
+                  <strong>Rick Astley</strong>
+                  <ion-text>Never Gonna Give You Up</ion-text>
+                  <br />
+                  <ion-note color="medium" class="ion-text-wrap"> Never gonna give you up Never gonna let you down Never gonna run... </ion-note>
+                </ion-label>
+                <div class="metadata-end-wrapper" slot="end">
+                  <ion-note color="medium">06:11</ion-note>
+                  <ion-icon color="medium" name="chevron-forward"></ion-icon>
+                </div>
+              </ion-item>
+              <ion-item button="true" detail="false">
+                <div class="unread-indicator-wrapper" slot="start"></div>
+                <ion-label>
+                  <strong>Ionitron</strong>
+                  <ion-text>I have become sentient</ion-text>
+                  <br />
+                  <ion-note color="medium" class="ion-text-wrap">That is all.</ion-note>
+                </ion-label>
+                <div class="metadata-end-wrapper" slot="end">
+                  <ion-note color="medium">03:44</ion-note>
+                  <ion-icon color="medium" name="chevron-forward"></ion-icon>
+                </div>
+              </ion-item>
+              <ion-item button="true" detail="false">
+                <div class="unread-indicator-wrapper" slot="start">
+                  <div class="unread-indicator"></div>
+                </div>
+                <ion-label>
+                  <strong>Steam</strong>
+                  <ion-text>Game Store Sale</ion-text>
+                  <br />
+                  <ion-note color="medium" class="ion-text-wrap"> That game you added to your wish list 2 years ago is now on sale! </ion-note>
+                </ion-label>
+                <div class="metadata-end-wrapper" slot="end">
+                  <ion-note color="medium">Yesterday</ion-note>
+                  <ion-icon color="medium" name="chevron-forward"></ion-icon>
+                </div>
+              </ion-item>
+              <ion-item button="true" detail="false">
+                <div class="unread-indicator-wrapper" slot="start"></div>
+                <ion-label>
+                  <strong>Ionic</strong>
+                  <ion-text>Announcing Ionic 7.0</ion-text>
+                  <br />
+                  <ion-note color="medium" class="ion-text-wrap">This version is one more than Ionic 6!</ion-note>
+                </ion-label>
+                <div class="metadata-end-wrapper" slot="end">
+                  <ion-note color="medium">Yesterday</ion-note>
+                  <ion-icon color="medium" name="chevron-forward"></ion-icon>
+                </div>
+              </ion-item>
+            </ion-list>
+            </ion-content>
+          </ion-content>
+        </div>
+      </ion-tab>
+      <ion-tab tab="search">
+        <ion-nav id="search-nav"></ion-nav>
+        <div id="search-page" class="page-content">
+          <ion-content>
+            <section id="profile">
+              <h2>User Profile</h2>
+              <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Save Profile</button>
+              </form>
+            </section>
+            <section id="settings">
+              <h2>User Settings</h2>
+              <form>
+                <label for="theme">Select Theme:</label>
+                <select id="theme" name="theme">
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+                <label for="notifications">Receive Notifications:</label>
+                <input type="checkbox" id="notifications" name="notifications" checked>
+                <button type="submit">Save Settings</button>
+              </form>
+            </section>
+          </ion-content>
+        </div>
+      </ion-tab>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="home"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="radio">
+          <ion-icon name="person"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="library">
+          <ion-icon name="search"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="search">
+          <ion-icon name="settings"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+    <script>
+      const homeNav = document.querySelector('#home-nav');
+      const homePage = document.querySelector('#home-page');
+      homeNav.root = homePage;
+      const radioNav = document.querySelector('#radio-nav');
+      const radioPage = document.querySelector('#radio-page');
+      radioNav.root = radioPage;
+      const libraryNav = document.querySelector('#library-nav');
+      const libraryPage = document.querySelector('#library-page');
+      libraryNav.root = libraryPage;
+      const searchNav = document.querySelector('#search-nav');
+      const searchPage = document.querySelector('#search-page');
+      searchNav.root = searchPage;
+    </script>
     <script src="./app/src/app.js"></script>
-      
   </body>
 </html>
