@@ -36,15 +36,15 @@
   <p id="message">This modal example uses triggers to automatically open a modal when the button is clicked.</p>
   <ion-modal trigger="open-modal">
     
-      <ion-toolbar style="background-color: #eee;">
+      <ion-tab-bar slot="top" style="background-color: #eee;">
         <ion-buttons slot="start">
-         <button class="btn"><img src="app/svg/arrow-left.svg" style="width: 20px;"/></button>
+         <img src="app/svg/arrow-left.svg" style="width: 30px;" />
         </ion-buttons>
        
         <ion-buttons slot="end">
           <button class="btn" onclick="confirm()" strong="true">Confirm</button>
         </ion-buttons>
-      </ion-toolbar>
+      </ion-tab-bar>
     
     <ion-content>
       <ion-item>
