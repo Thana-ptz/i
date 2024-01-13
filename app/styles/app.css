@@ -1,3 +1,11 @@
+.page-content {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+    
+
 section {
             width: 100%;
             margin: 20px auto;
