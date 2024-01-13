@@ -5,7 +5,9 @@
         height: 100%;
       }
     
-
+ion-toolbar {
+        background-color: #eee;
+}
 section {
             width: 100%;
             align-items: center;
