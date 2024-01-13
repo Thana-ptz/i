@@ -5,8 +5,9 @@
         height: 100%;
       }
     
-ion-toolbar {
+.toolbar {
         background-color: #eee;
+        justify-content: space-between;
 }
 section {
             width: 100%;
