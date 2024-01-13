@@ -36,17 +36,11 @@
   <p id="message">This modal example uses triggers to automatically open a modal when the button is clicked.</p>
   <ion-modal trigger="open-modal">
     
-     <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="home">
+     <ion-tab-bar slot="top">
+        <ion-tab-button tab="home" slot="start">
           <ion-icon name="home"></ion-icon>
         </ion-tab-button>
-        <ion-tab-button tab="radio">
-          <ion-icon name="person"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="library">
-          <ion-icon name="search"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="search">
+        <ion-tab-button tab="search" slot="end">
           <ion-icon name="settings"></ion-icon>
         </ion-tab-button>
       </ion-tab-bar>
