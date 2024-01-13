@@ -11,7 +11,7 @@ section {
             align-items: center;
             justify-content: center;  
             margin: auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #eee;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
@@ -19,9 +19,7 @@ form {
             background-color: none;
             align-items: center;
             justify-content: center;  
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;        
             width: 100%;
         }
 
@@ -31,7 +29,7 @@ form {
         }
 
         input {
-            border: none;
+            border: 1px;
             border-radius: 6px;
             background-color: #fff;
             width: 100%;
