@@ -32,11 +32,11 @@
       <ion-tab tab="radio">
         <ion-nav id="radio-nav"></ion-nav>
         <div id="radio-page" class="page-content">
-          <ion-button id="open-modal" expand="block">Open</ion-button>
+          <ion-button class="btn" id="open-modal" expand="block">Open</ion-button>
   <p id="message">This modal example uses triggers to automatically open a modal when the button is clicked.</p>
   <ion-modal trigger="open-modal">
     
-      <ion-toolbar>
+      <ion-toolbar style="background-color: #eee;">
         <ion-buttons slot="start">
          <button class="btn"><img src="app/svg/arrow-left.svg" style="width: 20px;"/></button>
         </ion-buttons>
@@ -48,7 +48,10 @@
     
     <ion-content>
       <ion-item>
-        <ion-input label="Enter your name" label-placement="stacked" type="text" placeholder="Your name"></ion-input>
+        <input label="ชื่อสินค้า" label-placement="stacked" type="text" placeholder="ชื่อสินค้า"></input>
+      </ion-item>
+       <ion-item>
+        <input label="ราคา" label-placement="stacked" type="text" placeholder="ราคา"></input>
       </ion-item>
     </ion-content>
   </ion-modal>
