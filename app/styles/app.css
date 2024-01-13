@@ -10,13 +10,13 @@ section {
             width: 100%;
             align-items: center;
             justify-content: center;  
-            margin: 20px auto;
+            margin: auto;
             padding: 20px;
             background-color: #eee;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 form {
-            background-color: #fff;
+            background-color: none;
             align-items: center;
             justify-content: center;  
             padding: 20px;
@@ -33,6 +33,7 @@ form {
         input {
             border: none;
             border-radius: 6px;
+            background-color: #fff;
             width: 100%;
             padding: 5px;
             box-sizing: border-box;
