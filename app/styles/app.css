@@ -62,7 +62,7 @@ form {
 
 input[type="text"] {
     padding: 8px;
-    width: 100%;
+    width: auto;
 }
 
 button {
