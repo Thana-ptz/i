@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-commerce Dashboard</title>
-  <style>
-    /* เพิ่มสไตล์ที่ต้องการสำหรับ product-card */
-    .product-card {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px;
-      width: 200px;
-      text-align: center;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Dashboard</title>
+    <style>
+        /* เพิ่มสไตล์ที่ต้องการสำหรับ product-card */
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            position: relative;
+        }
 
-    /* เพิ่มสไตล์สำหรับปุ่มลบ */
-    .delete-button {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      cursor: pointer;
-    }
-  </style>
+        /* เพิ่มสไตล์สำหรับปุ่มลบ */
+        .delete-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-  <div id="productContainer"></div>
+    <div id="productContainer"></div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      fetch('https://script.google.com/macros/s/AKfycbwtfdyqaCRvLu3MM4q9VsXwoqYr8lq2zd2v6047xIyaNQ3DRWjd-h5eNBdEEMAdzSdM/exec')
-        .then(response => response.json())
-        .then(data => {
-          const productContainer = document.getElementById('productContainer');
-          
-          data.data.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.classList.add('product-card');
-            productCard.innerHTML = `
-              <h3>${product.productName}</h3>
-              <p>${product.productDescription}</p>
-              <p>ราคา: ${product.productPrice} บาท</p>
-              <p>ID ${product.productID}</p>
-              <button class="delete-button" onclick="deleteProduct('${product.productID}')">ลบ</button>
-            `;
-            productContainer.appendChild(productCard);
-          });
-        })
-        .catch(error => console.error('Error fetching product data:', error));
-    });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('https://script.google.com/macros/s/AKfycbwtfdyqaCRvLu3MM4q9VsXwoqYr8lq2zd2v6047xIyaNQ3DRWjd-h5eNBdEEMAdzSdM/exec')
+                .then(response => response.json())
+                .then(data => {
+                    const productContainer = document.getElementById('productContainer');
 
-    function deleteProduct(productID) {
-      fetch(`https://script.google.com/macros/s/AKfycbzrRrdFCwd3vFbfuNyZadKGZer6OsSCA1lfPLp6tw2Mgzd86TL026GOsuuP7fGiYuxg/exec?productID=${product.productID}`, { method: 'DELETE' })
-        .then(response => {
-          if (response.ok) {
-            alert(`Product with ID ${productID} deleted successfully.`);
-            // หลังจากลบเรียบร้อย, อัปเดตหน้าแดชบอร์ดหรือทำอย่างอื่นตามต้องการ
-            const productCard = document.querySelector(`[data-product-id="${product.productID}"]`);
-            if (productCard) {
-              productCard.remove();
-            }
-          } else {
-            alert.error('Failed to delete product:', response.statusText);
-          }
-        })
-        alert.catch(error => console.error('Error deleting product:', error));
-    }
-  </script>
+                    data.data.forEach(product => {
+                        const productCard = document.createElement('div');
+                        productCard.classList.add('product-card');
+                        productCard.innerHTML = `
+                            <h3>${product.productName}</h3>
+                            <p>${product.productDescription}</p>
+                            <p>ราคา: ${product.productPrice} บาท</p>
+                            <p data-product-id="${product.productID}">ID ${product.productID}</p>
+                            <button class="delete-button" onclick="deleteProduct('${product.productID}')">ลบ</button>
+                        `;
+                        productContainer.appendChild(productCard);
+                    });
+                })
+                .catch(error => console.error('Error fetching product data:', error));
+        });
+
+        function deleteProduct(productID) {
+            fetch(`https://script.google.com/macros/s/AKfycbzrRrdFCwd3vFbfuNyZadKGZer6OsSCA1lfPLp6tw2Mgzd86TL026GOsuuP7fGiYuxg/exec?productID=${productID}`, { method: 'DELETE' })
+                .then(response => {
+                    if (response.ok) {
+                        alert(`Product with ID ${productID} deleted successfully.`);
+                        // หลังจากลบเรียบร้อย, อัปเดตหน้าแดชบอร์ดหรือทำอย่างอื่นตามต้องการ
+                        const productCard = document.querySelector(`[data-product-id="${productID}"]`);
+                        if (productCard) {
+                            productCard.remove();
+                        }
+                    } else {
+                        console.error('Failed to delete product:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Error deleting product:', error));
+        }
+    </script>
 </body>
+
 </html>
