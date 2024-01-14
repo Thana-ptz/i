@@ -51,12 +51,12 @@
     });
 
     function deleteProduct(productID) {
-      fetch(`https://script.google.com/macros/s/AKfycby16fkS5P58HcxgWV3Byf3-cOxWf19hDefVbN75S9uO0aD0dNcKZTuSvh8wNeKgcFaU/exec?productID=${product.productID}`, { method: 'DELETE' })
+      fetch(`https://script.google.com/macros/s/AKfycbzrRrdFCwd3vFbfuNyZadKGZer6OsSCA1lfPLp6tw2Mgzd86TL026GOsuuP7fGiYuxg/exec?productID=${product.productID}`, { method: 'DELETE' })
         .then(response => {
           if (response.ok) {
             alert(`Product with ID ${productID} deleted successfully.`);
             // หลังจากลบเรียบร้อย, อัปเดตหน้าแดชบอร์ดหรือทำอย่างอื่นตามต้องการ
-            const productCard = document.querySelector(`[data-product-id="${productID}"]`);
+            const productCard = document.querySelector(`[data-product-id="${product.productID}"]`);
             if (productCard) {
               productCard.remove();
             }
