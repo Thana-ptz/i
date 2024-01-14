@@ -19,25 +19,15 @@
   <div id="productContainer"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      fetch('https://script.google.com/macros/s/AKfycbwtfdyqaCRvLu3MM4q9VsXwoqYr8lq2zd2v6047xIyaNQ3DRWjd-h5eNBdEEMAdzSdM/exec')
-        .then(response => response.json())
-        .then(data => {
-          const productContainer = document.getElementById('productContainer');
-          
-          data.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.classList.add('product-card');
-            productCard.innerHTML = `
-              <h3>${product.productName}</h3>
-              <p>${product.productPrice}</p>
-              <!-- เพิ่มข้อมูลเพิ่มเติมที่คุณต้องการ -->
-            `;
-            productContainer.appendChild(productCard);
-          });
-        })
-        .catch(error => console.error('Error fetching product data:', error));
-    });
+    document.addEventListener('DOMContentLoaded', function () { fetch('https://script.google.com/macros/s/AKfycbwtfdyqaCRvLu3MM4q9VsXwoqYr8lq2zd2v6047xIyaNQ3DRWjd-h5eNBdEEMAdzSdM/exec') .then(response => response.json()) .then(data => { const productContainer = document.getElementById('productContainer'); data.data.forEach(product => { const productCard = document.createElement('div'); productCard.classList.add('product-card'); productCard.innerHTML = `
+${product.productName}
+${product.productDescription}
+
+ราคา: ${product.productPrice} บาท
+
+`; productContainer.appendChild(productCard); }); }) .catch(error => console.error('Error fetching product data:', error)); });
+ลบ
+
   </script>
 </body>
 </html>
