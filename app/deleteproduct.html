@@ -41,6 +41,7 @@
               <h3>${product.productName}</h3>
               <p>${product.productDescription}</p>
               <p>ราคา: ${product.productPrice} บาท</p>
+              <p>ID ${product.productID}</p>
               <button class="delete-button" onclick="deleteProduct('${product.productID}')">ลบ</button>
             `;
             productContainer.appendChild(productCard);
@@ -49,13 +50,13 @@
         .catch(error => console.error('Error fetching product data:', error));
     });
 
-    function deleteProduct(productId) {
-      fetch(`https://script.google.com/macros/s/AKfycby16fkS5P58HcxgWV3Byf3-cOxWf19hDefVbN75S9uO0aD0dNcKZTuSvh8wNeKgcFaU/exec?productId=${productId}`, { method: 'DELETE' })
+    function deleteProduct(productID) {
+      fetch(`https://script.google.com/macros/s/AKfycby16fkS5P58HcxgWV3Byf3-cOxWf19hDefVbN75S9uO0aD0dNcKZTuSvh8wNeKgcFaU/exec?productID=${productID}`, { method: 'DELETE' })
         .then(response => {
           if (response.ok) {
-            console.log(`Product with ID ${productId} deleted successfully.`);
+            console.log(`Product with ID ${productID} deleted successfully.`);
             // หลังจากลบเรียบร้อย, อัปเดตหน้าแดชบอร์ดหรือทำอย่างอื่นตามต้องการ
-            const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+            const productCard = document.querySelector(`[data-product-id="${productID}"]`);
             if (productCard) {
               productCard.remove();
             }
